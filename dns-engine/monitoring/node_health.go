@@ -6,10 +6,10 @@ type NodeHealth struct {
 	Latency int
 }
 
-func Check(node string) NodeHealth {
+func CheckNode(node string) NodeHealth {
 	return NodeHealth{
 		Node:    node,
 		Healthy: true,
-		Latency: 1,
+		Latency: 0,
 	}
 }

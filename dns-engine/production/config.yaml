@@ -1,0 +1,9 @@
+server:
+  udp_port: 53
+  tcp_port: 53
+
+cache:
+  ttl: 60
+
+routing:
+  mode: latency-health

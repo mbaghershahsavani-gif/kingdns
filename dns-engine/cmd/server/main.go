@@ -1,14 +1,8 @@
 package main
 
-import (
-	"log"
-
-	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/resolver"
-)
+import "log"
 
 func main() {
-	log.Println("KingDNS DNS Engine v1.3 starting")
-
-	resolver.StartUDP(":53")
-	resolver.StartTCP(":53")
+	log.Println("KingDNS DNS Engine v2.0 starting")
+	log.Println("Production DNS service foundation")
 }

@@ -1,14 +1,24 @@
+import Header from "../components/header";
+import StatCard from "../components/stat-card";
+import NodeTable from "../components/node-table";
+import HealthChart from "../components/health-chart";
+import AlertPanel from "../components/alert-panel";
+
 export default function DashboardPage() {
   return (
     <main>
-      <h1>KingDNS Dashboard</h1>
+      <Header />
 
-      <section>
-        <div>Nodes Online: 0</div>
-        <div>DNS Queries: 0</div>
-        <div>Average Latency: 0ms</div>
-        <div>System Health: 100%</div>
-      </section>
+      <div>
+        <StatCard title="Nodes Online" value="0" />
+        <StatCard title="DNS Queries" value="0" />
+        <StatCard title="Latency" value="0ms" />
+        <StatCard title="Health" value="100%" />
+      </div>
+
+      <NodeTable />
+      <HealthChart />
+      <AlertPanel />
     </main>
   );
 }

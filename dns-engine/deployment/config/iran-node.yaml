@@ -1,0 +1,4 @@
+node:
+  id: iran-01
+  region: iran
+  role: dns-edge

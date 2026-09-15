@@ -1,0 +1,4 @@
+node:
+  id: international-01
+  region: international
+  role: dns-edge

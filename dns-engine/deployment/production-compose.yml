@@ -1,0 +1,5 @@
+services:
+  kingdns:
+    image: kingdns
+    ports:
+      - "53:53"

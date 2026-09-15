@@ -1,7 +1,13 @@
 package config
 
 type ProductionConfig struct {
-	PostgresURL   string
-	RedisURL      string
-	ControllerURL string
+	Environment string
+	Port        int
+}
+
+func Load() ProductionConfig {
+	return ProductionConfig{
+		Environment: "production",
+		Port:        53,
+	}
 }

@@ -1,14 +1,17 @@
 package controller
 
+import (
+	"net/http"
+)
+
 type Client struct {
-	URL   string
-	Token string
+	BaseURL string
+	HTTP    *http.Client
 }
 
-func (c Client) Sync() error {
-	// Future:
-	// - fetch nodes
-	// - fetch routing policies
-	// - publish metrics
-	return nil
+func NewClient(url string) *Client {
+	return &Client{
+		BaseURL: url,
+		HTTP:    &http.Client{},
+	}
 }

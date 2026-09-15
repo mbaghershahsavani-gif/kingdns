@@ -11,8 +11,7 @@ KingDNS is a next-generation smart DNS traffic management platform inspired by D
 * installer: production installer scripts
 
 
-
-\# KingDNS DNS Engine
+# KingDNS DNS Engine
 
 
 
@@ -20,77 +19,37 @@ Enterprise distributed DNS platform with:
 
 
 
-\- intelligent routing
+- intelligent routing
 
-\- multi-region DNS
+- multi-region DNS
 
-\- health-based failover
+- health-based failover
 
-\- enterprise security
+- enterprise security
 
-\- production deployment support
-
-
+- production deployment support
 
 
-
-\# Quick Production Deployment
-
-
+# Quick Production Deployment
 
 KingDNS supports two-node deployment:
 
-
-
-&#x20;           KingDNS Control Plane
-
-
-
-&#x20;                  |
-
-&#x20;     +------------+------------+
-
-&#x20;     |                         |
-
-&#x20;     v                         v
-
-
-
 Iran DNS Node            International DNS Node
 
-
-
-&#x20;Server 1                 Server 2
-
-
-
-
-
-\## Server 1 — Iran Node 🇮🇷
-
-
+## Server 1 — Iran Node 🇮🇷
 
 Run this command on the Iran server:
-
-
 
 ```bash
 
 curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge iran
 
 
-
-
-
-
-
 Server 2 — International Node 🌍
-
-
 
 Run this command on the international server:
 
-
+```bash
 
 curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge international
 

@@ -1,20 +1,21 @@
 package routing
 
-type FailoverDecision struct {
-	Target string
-	Reason string
+type FailoverNode struct {
+	IP      string
+	Healthy bool
+	Latency int
 }
 
-func SelectFailover(primary string, backup string) FailoverDecision {
-	if primary != "" {
-		return FailoverDecision{
-			Target: primary,
-			Reason: "primary-healthy",
+func SelectFailover(nodes []FailoverNode) string {
+	best := ""
+
+	for _, node := range nodes {
+		if node.Healthy {
+			if best == "" || node.Latency < 999999 {
+				best = node.IP
+			}
 		}
 	}
 
-	return FailoverDecision{
-		Target: backup,
-		Reason: "failover",
-	}
+	return best
 }

@@ -1,12 +1,10 @@
 package monitoring
 
-type QueryMetric struct {
-	Domain  string
-	Latency int
-	Status  string
+type QueryMetrics struct {
+	Total     uint64
+	CacheHits uint64
 }
 
-func Publish(metric QueryMetric) {
-	// Future:
-	// send metrics to controller
+func (m *QueryMetrics) RecordQuery() {
+	m.Total++
 }

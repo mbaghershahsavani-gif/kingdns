@@ -48,7 +48,7 @@ curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/
 
 Iran DNS Node            International DNS Node
 
-## Server 2 — International Node
+## Server 2 — International Node 🌍
 
 Run this command on the Iran server:
 

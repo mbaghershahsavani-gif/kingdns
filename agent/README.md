@@ -1,7 +1,10 @@
-# KingDNS Agent
+# KingDNS Agent v1.0
 
-Node software for:
-- relay nodes
-- exit nodes
-- heartbeat
-- configuration sync
+Lightweight node agent foundation.
+
+Responsibilities:
+- register node
+- heartbeat reporting
+- metrics collection
+- secure controller communication
+- DNS node management

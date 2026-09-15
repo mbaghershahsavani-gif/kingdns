@@ -1,7 +1,13 @@
 package controller
 
-// DNS engine heartbeat synchronization.
-//
-// Future:
-// - send query metrics
-// - receive node changes
+type Heartbeat struct {
+	Node   string
+	Status string
+}
+
+func SendHeartbeat(node string) Heartbeat {
+	return Heartbeat{
+		Node:   node,
+		Status: "healthy",
+	}
+}

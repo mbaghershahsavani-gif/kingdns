@@ -1,10 +1,17 @@
 package routing
 
-type RuntimeSelector struct {
+type RuntimeNode struct {
+	IP      string
+	Healthy bool
+	Latency int
 }
 
-func (s RuntimeSelector) Select() Result {
-	return Result{
-		TTL: 60,
+func SelectRuntime(nodes []RuntimeNode) string {
+	for _, node := range nodes {
+		if node.Healthy {
+			return node.IP
+		}
 	}
+
+	return ""
 }

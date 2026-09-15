@@ -1,13 +1,13 @@
 package node
 
 type Heartbeat struct {
-	NodeID string
+	NodeID  string
 	Healthy bool
 }
 
 func Report(nodeID string) Heartbeat {
 	return Heartbeat{
-		NodeID: nodeID,
+		NodeID:  nodeID,
 		Healthy: true,
 	}
 }

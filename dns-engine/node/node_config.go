@@ -1,15 +1,15 @@
 package node
 
 type NodeConfig struct {
-	ID string
+	ID     string
 	Region string
-	Role string
+	Role   string
 }
 
 func Configure(id string, region string) NodeConfig {
 	return NodeConfig{
-		ID: id,
+		ID:     id,
 		Region: region,
-		Role: "dns-edge",
+		Role:   "dns-edge",
 	}
 }

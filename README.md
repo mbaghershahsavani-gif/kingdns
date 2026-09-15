@@ -4,25 +4,95 @@ KingDNS is a next-generation smart DNS traffic management platform inspired by D
 
 ## Architecture
 
-- controller: Go control plane API
-- dns-engine: routing and resolver intelligence
-- agent: relay and exit node agents
-- dashboard: Next.js administration panel
-- installer: production installer scripts
+* controller: Go control plane API
+* dns-engine: routing and resolver intelligence
+* agent: relay and exit node agents
+* dashboard: Next.js administration panel
+* installer: production installer scripts
 
-## Roadmap
 
-Phase 1:
-- Controller API
-- PostgreSQL schema
-- Node registration
-- Dashboard foundation
 
-Phase 2:
-- Smart routing engine
-- Analytics
-- Security layer
+\# KingDNS DNS Engine
 
-Phase 3:
-- Multi-region cluster
-- AI optimization
+
+
+Enterprise distributed DNS platform with:
+
+
+
+\- intelligent routing
+
+\- multi-region DNS
+
+\- health-based failover
+
+\- enterprise security
+
+\- production deployment support
+
+
+
+
+
+\# Quick Production Deployment
+
+
+
+KingDNS supports two-node deployment:
+
+
+
+&#x20;           KingDNS Control Plane
+
+
+
+&#x20;                  |
+
+&#x20;     +------------+------------+
+
+&#x20;     |                         |
+
+&#x20;     v                         v
+
+
+
+Iran DNS Node            International DNS Node
+
+
+
+&#x20;Server 1                 Server 2
+
+
+
+
+
+\## Server 1 — Iran Node 🇮🇷
+
+
+
+Run this command on the Iran server:
+
+
+
+```bash
+
+curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge iran
+
+
+
+
+
+
+
+Server 2 — International Node 🌍
+
+
+
+Run this command on the international server:
+
+
+
+curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge international
+
+
+

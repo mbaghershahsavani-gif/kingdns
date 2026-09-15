@@ -1,0 +1,9 @@
+controller:
+  url: http://localhost:8080
+
+node:
+  name: kingdns-node-01
+  region: EU
+
+security:
+  token: ""

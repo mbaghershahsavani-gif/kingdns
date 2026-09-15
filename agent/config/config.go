@@ -1,7 +1,8 @@
 package config
 
 type Config struct {
-	ControllerURL string
-	NodeID        string
-	Token         string
+    ControllerURL string
+    NodeName      string
+    Region        string
+    Token         string
 }

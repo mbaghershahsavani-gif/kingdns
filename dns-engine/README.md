@@ -1,7 +1,10 @@
-# KingDNS DNS Engine
+# KingDNS DNS Engine v1
 
-Features:
-- intelligent routing
-- resolver health checks
-- cache
-- firewall rules
+Resolver foundation.
+
+Responsibilities:
+- DNS request handling
+- routing decisions
+- caching
+- query analytics
+- health-aware selection

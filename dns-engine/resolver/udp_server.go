@@ -1,15 +1,12 @@
 package resolver
 
-import (
-	"log"
-)
+import "github.com/miekg/dns"
 
-func StartUDP(address string) {
-	log.Println("KingDNS UDP DNS listener foundation:", address)
+func StartUDPServer(address string) error {
+	server := &dns.Server{
+		Addr: address,
+		Net: "udp",
+	}
 
-	// Future:
-	// - bind UDP :53
-	// - parse DNS packets
-	// - resolve queries
-	// - write DNS responses
+	return server.ListenAndServe()
 }

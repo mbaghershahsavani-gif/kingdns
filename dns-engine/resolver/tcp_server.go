@@ -1,11 +1,12 @@
 package resolver
 
-import "log"
+import "github.com/miekg/dns"
 
-func StartTCP(address string) {
-	log.Println("KingDNS TCP DNS listener foundation:", address)
+func StartTCPServer(address string) error {
+	server := &dns.Server{
+		Addr: address,
+		Net: "tcp",
+	}
 
-	// Future:
-	// - TCP DNS fallback
-	// - large response handling
+	return server.ListenAndServe()
 }

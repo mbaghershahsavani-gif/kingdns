@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS node_health (
+ id SERIAL PRIMARY KEY,
+ node_id INTEGER NOT NULL,
+ latency INTEGER,
+ cpu INTEGER,
+ memory INTEGER,
+ health_score FLOAT,
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

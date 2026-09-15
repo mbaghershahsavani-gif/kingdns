@@ -3,7 +3,7 @@ package cache
 type LookupResult struct {
 	Found bool
 	Value string
-	TTL int
+	TTL   int
 }
 
 func Lookup(name string) LookupResult {

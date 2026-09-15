@@ -5,10 +5,14 @@ import (
 	"sync"
 
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/resolver"
+	"github.com/miekg/dns"
 )
 
 func main() {
-	log.Println("KingDNS DNS Engine v2.5 starting")
+	log.Println("KingDNS DNS Engine v2.7 starting")
+
+	// Register DNS request handler
+	dns.HandleFunc(".", resolver.RuntimeHandler)
 
 	var wg sync.WaitGroup
 

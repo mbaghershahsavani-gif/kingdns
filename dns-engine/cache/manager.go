@@ -1,8 +1,8 @@
 package cache
 
 type Entry struct {
-	Name string
-	TTL int
+	Name  string
+	TTL   int
 	Value string
 }
 

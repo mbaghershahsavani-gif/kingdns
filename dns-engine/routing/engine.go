@@ -1,7 +1,7 @@
 package routing
 
 type Decision struct {
-	Node string
+	Node   string
 	Reason string
 }
 

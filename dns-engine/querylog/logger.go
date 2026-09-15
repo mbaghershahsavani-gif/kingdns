@@ -1,8 +1,8 @@
 package querylog
 
 type Entry struct {
-	Domain string
-	Status string
+	Domain  string
+	Status  string
 	Latency int
 }
 

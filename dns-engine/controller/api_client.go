@@ -2,7 +2,7 @@ package controller
 
 type APIClient struct {
 	BaseURL string
-	Token string
+	Token   string
 }
 
 func (c APIClient) GetNodes() error {

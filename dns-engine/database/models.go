@@ -1,6 +1,6 @@
-package resolver
+package database
 
-type DNSRecord struct {
+type DomainRecord struct {
 	Name  string
 	Type  string
 	Value string

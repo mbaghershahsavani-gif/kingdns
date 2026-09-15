@@ -1,7 +1,7 @@
 package routing
 
 type Policy struct {
-	Mode string
+	Mode   string
 	Region string
 }
 

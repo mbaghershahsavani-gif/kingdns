@@ -5,7 +5,7 @@ import "github.com/miekg/dns"
 func StartTCP(address string) error {
 	server := &dns.Server{
 		Addr: address,
-		Net: "tcp",
+		Net:  "tcp",
 	}
 
 	return server.ListenAndServe()

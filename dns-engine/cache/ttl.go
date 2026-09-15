@@ -1,9 +1,9 @@
 package cache
 
 type Record struct {
-	Name string
+	Name  string
 	Value string
-	TTL int
+	TTL   int
 }
 
 func Valid(record Record) bool {

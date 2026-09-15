@@ -2,7 +2,7 @@ package monitoring
 
 type DashboardMetric struct {
 	Queries uint64
-	Errors uint64
+	Errors  uint64
 	Latency uint64
 }
 

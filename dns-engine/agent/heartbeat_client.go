@@ -1,8 +1,8 @@
 package agent
 
 type Heartbeat struct {
-	NodeID int
-	Health int
+	NodeID  int
+	Health  int
 	Latency int
 }
 

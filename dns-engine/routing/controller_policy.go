@@ -1,7 +1,7 @@
 package routing
 
 type ControllerPolicy struct {
-	Mode string
+	Mode   string
 	Region string
 }
 

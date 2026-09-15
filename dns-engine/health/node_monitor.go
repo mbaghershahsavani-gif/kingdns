@@ -1,7 +1,7 @@
 package health
 
 type Node struct {
-	Name string
+	Name  string
 	Score int
 }
 

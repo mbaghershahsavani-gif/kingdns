@@ -2,7 +2,7 @@ package routing
 
 type Result struct {
 	Target string
-	TTL int
+	TTL    int
 }
 
 func Execute() Result {

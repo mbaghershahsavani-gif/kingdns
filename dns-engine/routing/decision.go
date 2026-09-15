@@ -2,7 +2,7 @@ package routing
 
 type Decision struct {
 	Target string
-	TTL int
+	TTL    int
 }
 
 func Decide(domain string) Decision {

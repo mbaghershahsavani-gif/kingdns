@@ -2,7 +2,7 @@ package agent
 
 type Health struct {
 	NodeID int
-	Score int
+	Score  int
 }
 
 func Update(health Health) {

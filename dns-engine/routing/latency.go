@@ -1,9 +1,9 @@
 package routing
 
 type Candidate struct {
-	Name string
+	Name    string
 	Latency int
-	Health int
+	Health  int
 }
 
 func Best(candidates []Candidate) Candidate {

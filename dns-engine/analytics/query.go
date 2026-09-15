@@ -1,7 +1,7 @@
 package analytics
 
 type Query struct {
-	Domain string
+	Domain   string
 	Response string
-	Latency int
+	Latency  int
 }

@@ -1,9 +1,9 @@
 package routing
 
 type Target struct {
-	Name string
+	Name    string
 	Latency int
-	Health int
+	Health  int
 }
 
 func Select(targets []Target) Target {

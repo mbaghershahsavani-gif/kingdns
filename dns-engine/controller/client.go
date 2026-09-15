@@ -1,7 +1,7 @@
 package controller
 
 type Client struct {
-	URL string
+	URL   string
 	Token string
 }
 

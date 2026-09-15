@@ -1,9 +1,9 @@
 package protocol
 
 type Answer struct {
-	Name string
+	Name  string
 	Value string
-	TTL int
+	TTL   int
 }
 
 func Build(answer Answer) []byte {

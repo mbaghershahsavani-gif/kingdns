@@ -6,7 +6,7 @@ import (
 
 type HTTPClient struct {
 	BaseURL string
-	Client *http.Client
+	Client  *http.Client
 }
 
 func (c HTTPClient) Ping() error {

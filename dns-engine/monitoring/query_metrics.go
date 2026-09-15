@@ -1,9 +1,9 @@
 package monitoring
 
 type QueryMetric struct {
-	Domain string
+	Domain  string
 	Latency int
-	Status string
+	Status  string
 }
 
 func Publish(metric QueryMetric) {

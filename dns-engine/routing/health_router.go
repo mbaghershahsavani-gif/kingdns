@@ -1,7 +1,7 @@
 package routing
 
 type Node struct {
-	Name string
+	Name   string
 	Health int
 }
 

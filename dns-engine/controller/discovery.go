@@ -1,8 +1,8 @@
 package controller
 
 type Node struct {
-	Name string
-	Health int
+	Name    string
+	Health  int
 	Latency int
 }
 

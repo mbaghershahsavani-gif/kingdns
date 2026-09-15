@@ -1,9 +1,9 @@
 package analytics
 
 type Event struct {
-	Domain string
+	Domain  string
 	Latency int
-	Status string
+	Status  string
 }
 
 func Record(event Event) {

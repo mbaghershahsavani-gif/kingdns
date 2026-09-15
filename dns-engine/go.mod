@@ -1,6 +1,6 @@
 module github.com/mbaghershahsavani-gif/kingdns-dns-engine
 
-go 1.27
+go 1.22
 
 require github.com/miekg/dns v1.1.62
 

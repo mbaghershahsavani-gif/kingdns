@@ -1,7 +1,5 @@
 package auth
 
-// Authentication middleware foundation.
+// JWT middleware foundation.
 //
-// Future:
-// - protect API routes
-// - validate bearer tokens
+// Protects private controller routes.

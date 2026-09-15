@@ -1,8 +1,8 @@
 package auth
 
-// Authentication handlers.
+// Production authentication handlers.
 //
-// Alpha 5.2 implementation target:
-// - register user
-// - login user
-// - issue JWT token
+// Planned:
+// POST /api/auth/register
+// POST /api/auth/login
+// GET  /api/auth/me

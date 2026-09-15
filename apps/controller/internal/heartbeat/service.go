@@ -1,8 +1,9 @@
 package heartbeat
 
-// Heartbeat service foundation.
+// Production heartbeat service.
 //
-// Future:
-// - update node health
-// - calculate health score
-// - detect offline nodes
+// Flow:
+// receive heartbeat
+// calculate health
+// persist status
+// update cache

@@ -1,10 +1,10 @@
-import LiveStatus from "../../components/live-status";
+import NodeManagementCard from "../../components/node-management-card";
 
 export default function NodesPage() {
   return (
     <main>
-      <h1>Node Management</h1>
-      <LiveStatus />
+      <h1>KingDNS Nodes</h1>
+      <NodeManagementCard />
     </main>
   );
 }

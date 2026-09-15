@@ -1,0 +1,4 @@
+apiVersion: v2
+name: kingdns
+description: KingDNS deployment chart
+version: 5.4.0

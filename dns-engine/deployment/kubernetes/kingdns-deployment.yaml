@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kingdns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kingdns
+  template:
+    metadata:
+      labels:
+        app: kingdns
+    spec:
+      containers:
+      - name: kingdns
+        image: kingdns:latest

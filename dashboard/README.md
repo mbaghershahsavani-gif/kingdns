@@ -1,11 +1,19 @@
 # KingDNS Dashboard
 
-Planned stack:
+Premium DNS control panel foundation.
 
+Stack:
 - Next.js
 - TypeScript
-- Tailwind
+- Tailwind CSS
 - shadcn/ui
+- Recharts
 
-Design:
-Premium dark DNS cloud panel.
+Modules:
+- Overview
+- Nodes
+- DNS Analytics
+- Routing
+- Services
+- Users
+- Logs

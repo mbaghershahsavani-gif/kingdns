@@ -1,0 +1,22 @@
+{
+  "name": "kingdns-dashboard",
+  "version": "1.0.0-beta",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "26.5.1",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

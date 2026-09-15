@@ -1,9 +1,11 @@
 package routing
 
 type Selection struct {
-	IP string
+	Target string
 }
 
-func Select(domain string) Selection {
-	return Selection{}
+func SelectAnswer(domain string) Selection {
+	return Selection{
+		Target: "127.0.0.1",
+	}
 }

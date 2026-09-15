@@ -1,11 +1,6 @@
 package routing
 
-type Decision struct {
-	Node   string
-	Reason string
-}
-
-func Resolve() Decision {
+func ResolveLegacy() Decision {
 	return Decision{
 		Reason: "health-latency policy",
 	}

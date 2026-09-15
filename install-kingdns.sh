@@ -4,45 +4,45 @@ set -e
 ROLE=${1:-dns-edge}
 REGION=${2:-international}
 
-echo "Installing KingDNS production bootstrap"
-echo "Role: $ROLE"
-echo "Region: $REGION"
+echo "================================"
+echo " KingDNS Installer"
+echo " Role: $ROLE"
+echo " Region: $REGION"
+echo "================================"
 
-sudo apt update
-sudo apt install -y git golang docker.io ufw
+apt update
 
-sudo systemctl enable docker
-sudo systemctl start docker
+apt install -y git golang docker.io ufw
+
+systemctl enable docker
+systemctl start docker
 
 if [ ! -d /opt/kingdns ]; then
-  sudo git clone https://github.com/mbaghershahsavani-gif/kingdns.git /opt/kingdns
+    git clone https://github.com/mbaghershahsavani-gif/kingdns.git /opt/kingdns
 else
-  cd /opt/kingdns && sudo git pull
+    cd /opt/kingdns
+    git pull
 fi
 
 cd /opt/kingdns/dns-engine
 
 go mod tidy
+
 go build ./...
 
-sudo mkdir -p /etc/kingdns
+mkdir -p /etc/kingdns
 
-cat <<EOF | sudo tee /etc/kingdns/node.yaml
+cat > /etc/kingdns/node.yaml <<EOF
 node:
   role: $ROLE
   region: $REGION
-
-security:
-  tls: enabled
-
-monitoring:
-  health: enabled
 EOF
 
-sudo cp deployment/systemd/kingdns.service /etc/systemd/system/kingdns.service
-
-sudo systemctl daemon-reload
-sudo systemctl enable kingdns
-sudo systemctl restart kingdns
-
-echo "KingDNS bootstrap completed"
+echo ""
+echo "KingDNS installation completed"
+echo ""
+echo "Configuration:"
+cat /etc/kingdns/node.yaml
+echo ""
+echo "Start manually:"
+echo "cd /opt/kingdns/dns-engine && go run ./cmd/server"

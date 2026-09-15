@@ -44,6 +44,13 @@ Run this command on the Iran server:
 
 curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge iran
 
+```
+
+Iran DNS Node            International DNS Node
+
+## Server 2 — International Node
+
+Run this command on the Iran server:
 
 Server 2 — International Node 🌍
 
@@ -53,5 +60,5 @@ Run this command on the international server:
 
 curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge international
 
-
+```
 

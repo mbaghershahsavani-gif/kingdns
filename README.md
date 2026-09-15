@@ -1,64 +1,56 @@
 # KingDNS
 
-KingDNS is a next-generation smart DNS traffic management platform inspired by DoctorDNS.
+## Enterprise Distributed DNS Platform
+
+KingDNS is a distributed intelligent DNS platform designed for multi-region DNS operations.
+
+Features:
+
+- Distributed DNS runtime
+- Intelligent routing
+- Health-based failover
+- Multi-region deployment
+- Enterprise security foundation
+- Multi-tenant DNS architecture
+- Kubernetes/cloud deployment support
+
+## Quick Deployment
+
+### Iran Node 🇮🇷
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge iran
+```
+
+### International Node 🌍
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge international
+```
 
 ## Architecture
 
-* controller: Go control plane API
-* dns-engine: routing and resolver intelligence
-* agent: relay and exit node agents
-* dashboard: Next.js administration panel
-* installer: production installer scripts
+KingDNS supports:
 
+Client
+ |
+Global DNS Platform
+ |
+Control Plane
+ |
+Regional DNS Nodes
+ |
+Intelligent Routing
 
-# KingDNS DNS Engine
+## Documentation
 
+See:
 
+- docs/ARCHITECTURE.md
+- docs/ROADMAP.md
+- docs/DEPLOYMENT_GUIDE.md
+- docs/SECURITY.md
 
-Enterprise distributed DNS platform with:
+## License
 
-
-
-- intelligent routing
-
-- multi-region DNS
-
-- health-based failover
-
-- enterprise security
-
-- production deployment support
-
-
-# Quick Production Deployment
-
-KingDNS supports two-node deployment:
-
-Iran DNS Node            International DNS Node
-
-## Server 1 — Iran Node 🇮🇷
-
-Run this command on the Iran server:
-
-```bash
-
-curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge iran
-
-```
-
-Iran DNS Node            International DNS Node
-
-## Server 2 — International Node 🌍
-
-Run this command on the Iran server:
-
-Server 2 — International Node 🌍
-
-Run this command on the international server:
-
-```bash
-
-curl -fsSL https://raw.githubusercontent.com/mbaghershahsavani-gif/kingdns/main/install-kingdns.sh | bash -s dns-edge international
-
-```
-
+Apache License 2.0

@@ -1,11 +1,18 @@
 package cache
 
 type DistributedCache struct {
+	Connected bool
 }
 
-func (c DistributedCache) Get(domain string) string {
+func NewDistributedCache() *DistributedCache {
+	return &DistributedCache{
+		Connected: true,
+	}
+}
+
+func (c *DistributedCache) Get(key string) string {
 	return ""
 }
 
-func (c DistributedCache) Set(domain string, value string) {
+func (c *DistributedCache) Set(key string, value string, ttl int) {
 }

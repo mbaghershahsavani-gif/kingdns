@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  kingdns-engine:
+    image: kingdns-engine:v4
+    ports:
+      - "53:53"

@@ -1,6 +1,8 @@
-export function connectKingDNSWebSocket() {
-  // Future:
-  // live node status
-  // DNS traffic
-  // alerts
+export function connectDashboardSocket() {
+  // Future WebSocket implementation:
+  // node.online
+  // node.offline
+  // heartbeat.updated
+  // dns.query
+  // alert.created
 }

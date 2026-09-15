@@ -1,16 +1,24 @@
 package routing
 
-type NodeScore struct {
+type Candidate struct {
 	NodeID uint
 	Latency int
 	Health float64
 }
 
-// Future:
-// SelectBestNode will combine latency, health and geo rules.
-func SelectBestNode(nodes []NodeScore) uint {
-	if len(nodes) == 0 {
+func Select(candidates []Candidate) uint {
+	if len(candidates) == 0 {
 		return 0
 	}
-	return nodes[0].NodeID
+
+	best := candidates[0]
+
+	for _, node := range candidates {
+		if node.Health > best.Health ||
+			(node.Health == best.Health && node.Latency < best.Latency) {
+			best = node
+		}
+	}
+
+	return best.NodeID
 }

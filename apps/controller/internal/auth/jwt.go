@@ -1,8 +1,8 @@
 package auth
 
-// JWT implementation placeholder.
+// JWT implementation.
 //
-// Alpha 5 will add:
-// - token generation
-// - token validation
-// - refresh tokens
+// Target:
+// - generate access tokens
+// - validate bearer tokens
+// - middleware integration

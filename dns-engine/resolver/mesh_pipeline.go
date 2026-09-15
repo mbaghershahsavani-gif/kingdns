@@ -3,13 +3,12 @@ package resolver
 import "github.com/mbaghershahsavani-gif/kingdns-dns-engine/routing"
 
 func ResolveMesh(domain string) string {
-	nodes := []routing.MeshNode{
+	routes := []routing.GlobalRoute{
 		{
-			Region: "local",
-			IP:     "127.0.0.1",
+			Region: "primary",
 			Score:  100,
 		},
 	}
 
-	return routing.SelectMeshNode(nodes)
+	return routing.SelectGlobalRoute(routes)
 }

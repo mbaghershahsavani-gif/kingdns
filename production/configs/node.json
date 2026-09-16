@@ -3,6 +3,7 @@
   "region": "international",
   "cluster_token": "your-secret-token",
   "preferred_region": "iran",
+  "peer_url": "http://85.9.106.152:8081",
   "cluster_port": 8081,
   "health_port": 8080,
   "dns_port": 53

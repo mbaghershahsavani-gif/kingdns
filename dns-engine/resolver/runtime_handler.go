@@ -33,12 +33,14 @@ func RuntimeHandler(w dns.ResponseWriter, req *dns.Msg) {
 
 		record := repository.Find(name)
 
-		if record.Value != "" && record.Type == "A" {
+		if record.Type == "A" {
+
+			ip := ResolveSteeredIP()
 
 			AddARecord(
 				msg,
 				req.Question[0].Name,
-				record.Value,
+				ip,
 				record.TTL,
 			)
 		}

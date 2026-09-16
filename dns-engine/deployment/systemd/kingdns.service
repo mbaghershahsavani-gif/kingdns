@@ -8,7 +8,7 @@ Type=simple
 
 WorkingDirectory=/opt/kingdns/dns-engine
 
-ExecStart=/usr/bin/go run ./cmd/server
+ExecStart=/opt/kingdns/bin/kingdns
 
 Restart=always
 RestartSec=5

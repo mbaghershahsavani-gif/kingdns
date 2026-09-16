@@ -44,5 +44,16 @@ echo ""
 echo "Configuration:"
 cat /etc/kingdns/node.yaml
 echo ""
-echo "Start manually:"
-echo "cd /opt/kingdns/dns-engine && go run ./cmd/server"
+echo "Installing KingDNS system service"
+
+cp /opt/kingdns/dns-engine/deployment/systemd/kingdns.service /etc/systemd/system/kingdns.service
+
+systemctl daemon-reload
+
+systemctl enable kingdns
+
+systemctl restart kingdns
+
+echo ""
+echo "KingDNS service:"
+systemctl status kingdns --no-pager

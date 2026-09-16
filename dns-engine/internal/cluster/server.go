@@ -49,7 +49,7 @@ func StartServer(addr string) {
 
 	http.HandleFunc(
 		"/cluster/heartbeat",
-		HeartbeatHandler,
+		Protected(HeartbeatHandler),
 	)
 
 	http.HandleFunc(

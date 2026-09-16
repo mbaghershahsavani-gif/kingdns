@@ -1,0 +1,9 @@
+{
+  "node_id": "int-01",
+  "region": "international",
+  "cluster_token": "your-secret-token",
+  "preferred_region": "iran",
+  "cluster_port": 8081,
+  "health_port": 8080,
+  "dns_port": 53
+}

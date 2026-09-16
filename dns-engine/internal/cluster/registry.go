@@ -1,6 +1,9 @@
 package cluster
 
-import "sync"
+import (
+	"log"
+	"sync"
+)
 
 var (
 	nodes      = make(map[string]Score)
@@ -12,6 +15,13 @@ func RegisterScore(score Score) {
 	if score.NodeID == "" {
 		return
 	}
+
+	if !IsTrusted(score.NodeID) {
+		log.Printf("Rejected untrusted node: %s", score.NodeID)
+		return
+	}
+
+	log.Printf("Registered trusted node: %s", score.NodeID)
 
 	nodesMutex.Lock()
 	defer nodesMutex.Unlock()

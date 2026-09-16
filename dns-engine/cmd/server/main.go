@@ -2,14 +2,29 @@ package main
 
 import (
 	"log"
+	"os"
 	"sync"
 
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/resolver"
+	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/version"
 	"github.com/miekg/dns"
 )
 
 func main() {
-	log.Println("KingDNS DNS Engine v2.7 starting")
+	log.Printf(
+		"%s %s | Mode: %s",
+		version.Name,
+		version.Version,
+		version.Mode,
+	)
+
+	region := os.Getenv("KINGDNS_REGION")
+
+	if region == "" {
+		region = "unknown"
+	}
+
+	log.Printf("Region: %s", region)
 
 	// Register DNS request handler
 	dns.HandleFunc(".", resolver.RuntimeHandler)

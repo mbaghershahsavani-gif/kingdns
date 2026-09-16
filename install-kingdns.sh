@@ -1,3 +1,12 @@
+#!/bin/bash
+set -e
+
+if [ -d "/opt/kingdns" ]; then
+    rm -rf /opt/kingdns
+fi
+
+git clone https://github.com/mbaghershahsavani-gif/kingdns.git /opt/kingdns
+
 echo "Building KingDNS binary"
 
 mkdir -p /opt/kingdns/bin
@@ -7,6 +16,11 @@ cd /opt/kingdns/dns-engine
 go mod tidy
 
 go build -o /opt/kingdns/bin/kingdns ./cmd/server
+
+if [ ! -f "/opt/kingdns/bin/kingdns" ]; then
+    echo "KingDNS binary build failed"
+    exit 1
+fi
 
 
 echo "Installing KingDNS system service"
@@ -44,6 +58,14 @@ systemctl enable kingdns
 systemctl restart kingdns
 
 
+sleep 3
+
 echo ""
-echo "KingDNS service status:"
-systemctl status kingdns --no-pager
+echo "KingDNS runtime validation"
+
+systemctl is-active --quiet kingdns && echo "✓ Service running"
+
+ss -lntup | grep :53
+
+echo ""
+echo "KingDNS installation completed"

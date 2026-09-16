@@ -1,0 +1,22 @@
+[Unit]
+Description=KingDNS DNS Engine
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+WorkingDirectory=/opt/kingdns/dns-engine
+
+ExecStart=/usr/bin/go run ./cmd/server
+
+Restart=always
+RestartSec=5
+
+Environment=KINGDNS_REGION=unknown
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

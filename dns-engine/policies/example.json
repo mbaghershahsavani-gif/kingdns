@@ -1,0 +1,7 @@
+{
+  "domain": "example.com",
+  "type": "A",
+  "iran_ip": "10.10.10.10",
+  "international_ip": "20.20.20.20",
+  "ttl": 60
+}

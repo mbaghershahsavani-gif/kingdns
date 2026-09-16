@@ -8,6 +8,7 @@ import (
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/internal/cluster"
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/internal/config"
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/internal/health"
+	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/policies"
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/resolver"
 	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/version"
 	"github.com/miekg/dns"
@@ -20,6 +21,13 @@ func main() {
 		version.Version,
 		version.Mode,
 	)
+	err := policies.Load("policies/example.json")
+
+	if err != nil {
+		log.Println("Policy load error:", err)
+	} else {
+		log.Println("Policies loaded")
+	}
 
 	cfg, err := config.Load("configs/node.json")
 

@@ -35,7 +35,7 @@ func RuntimeHandler(w dns.ResponseWriter, req *dns.Msg) {
 
 		if record.Type == "A" {
 
-			ip := ResolveSteeredIP()
+			ip := ResolveSteeredIP(name)
 
 			AddARecord(
 				msg,

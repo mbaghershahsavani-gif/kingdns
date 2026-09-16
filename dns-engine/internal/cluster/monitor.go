@@ -1,38 +1,20 @@
-package cluster
-
-import (
-	"log"
-	"time"
-)
-
 func StartMonitor() {
 
-	ticker := time.NewTicker(
-		30 * time.Second,
-	)
+ ticker := time.NewTicker(...)
 
-	defer ticker.Stop()
+ for range ticker.C {
 
-	for {
-		select {
+     UpdateHeartbeat()
 
-		case <-ticker.C:
+     SyncPeer()
 
-			UpdateHeartbeat()
+     hb := GetHeartbeat()
 
-			RegisterScore(
-				CalculateScore(),
-			)
-
-			hb := GetHeartbeat()
-
-			log.Printf(
-				"Heartbeat sent: %s %s %s",
-				hb.NodeID,
-				hb.Region,
-				hb.Status,
-			)
-
-		}
-	}
+     log.Printf(
+        "Heartbeat sent: %s %s %s",
+        hb.NodeID,
+        hb.Region,
+        hb.Status,
+     )
+ }
 }

@@ -1,20 +1,29 @@
 package resolver
 
-import "github.com/mbaghershahsavani-gif/kingdns-dns-engine/internal/cluster"
+import (
+	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/internal/cluster"
+	"github.com/mbaghershahsavani-gif/kingdns-dns-engine/policies"
+)
 
-func ResolveSteeredIP() string {
+func ResolveSteeredIP(domain string) string {
 
 	route := cluster.CurrentRoute()
+
+	policy, ok := policies.Find(domain)
+
+	if !ok {
+		return ""
+	}
 
 	switch route.Region {
 
 	case "iran":
-		return "10.10.10.10"
+		return policy.IranIP
 
 	case "international":
-		return "20.20.20.20"
+		return policy.InternationalIP
 
 	default:
-		return "20.20.20.20"
+		return policy.InternationalIP
 	}
 }

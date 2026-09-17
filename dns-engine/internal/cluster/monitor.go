@@ -17,6 +17,10 @@ func StartMonitor() {
 
 		UpdateHeartbeat()
 
+		RegisterScore(
+			CalculateScore(),
+		)
+
 		SyncPeers()
 
 		RemoveStaleNodes()

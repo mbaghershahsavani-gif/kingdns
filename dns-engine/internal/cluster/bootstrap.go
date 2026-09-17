@@ -7,4 +7,7 @@ func Bootstrap() {
 	RegisterScore(
 		CalculateScore(),
 	)
+
+	// Initial peer discovery
+	SyncPeers()
 }

@@ -10,6 +10,7 @@ import (
 type Node struct {
 	ID           string    `json:"node_id"`
 	Region       string    `json:"region"`
+	IP           string    `json:"ip"`
 	Version      string    `json:"version"`
 	Status       string    `json:"status"`
 	Capabilities []string  `json:"capabilities"`
@@ -25,6 +26,11 @@ func CurrentNode() Node {
 	}
 
 	nodeID := os.Getenv("KINGDNS_NODE_ID")
+	ip := os.Getenv("KINGDNS_NODE_IP")
+
+	if ip == "" {
+		ip = "127.0.0.1"
+	}
 
 	if nodeID == "" {
 		nodeID = region + "-01"
@@ -33,6 +39,7 @@ func CurrentNode() Node {
 	return Node{
 		ID:      nodeID,
 		Region:  region,
+		IP:      ip,
 		Version: version.Version,
 		Status:  "healthy",
 		Capabilities: []string{

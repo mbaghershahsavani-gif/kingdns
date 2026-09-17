@@ -1,8 +1,9 @@
 package cluster
 
-import "time"
-
-const heartbeatTimeout = 90 * time.Second
+import (
+	"log"
+	"time"
+)
 
 func RemoveStaleNodes() {
 
@@ -13,11 +14,16 @@ func RemoveStaleNodes() {
 
 	for id, node := range nodes {
 
-		if id == CurrentNode().ID {
-			continue
-		}
+		age := now.Sub(node.LastSeen)
 
-		if now.Sub(node.LastSeen) > heartbeatTimeout {
+		if age > nodeTimeout {
+
+			log.Printf(
+				"Removing stale node: %s age=%s",
+				id,
+				age,
+			)
+
 			delete(nodes, id)
 		}
 	}

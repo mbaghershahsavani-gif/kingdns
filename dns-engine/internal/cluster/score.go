@@ -21,6 +21,10 @@ func CalculateScore() Score {
 
 	hb := GetHeartbeat()
 
+	if hb.LastSeen.IsZero() {
+		hb.LastSeen = time.Now()
+	}
+
 	heartbeatScore := 0
 
 	if time.Since(hb.LastSeen) < time.Minute {
@@ -41,8 +45,6 @@ func CalculateScore() Score {
 		DNS:       dnsScore,
 		Latency:   latencyScore,
 
-		Total: heartbeatScore +
-			dnsScore +
-			latencyScore,
+		Total: heartbeatScore + dnsScore + latencyScore,
 	}
 }

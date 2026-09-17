@@ -4,10 +4,7 @@ func Bootstrap() {
 
 	UpdateHeartbeat()
 
-	RegisterScore(
-		CalculateScore(),
-	)
+	score := CalculateScore()
 
-	// Initial peer discovery
-	SyncPeers()
+	RegisterScore(score)
 }

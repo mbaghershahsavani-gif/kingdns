@@ -2,7 +2,6 @@ package cluster
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 )
 
@@ -19,9 +18,4 @@ func SyncHandler(
 	)
 
 	json.NewEncoder(w).Encode(nodes)
-
-	log.Printf(
-		"Cluster sync request served: nodes=%d",
-		len(nodes),
-	)
 }

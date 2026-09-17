@@ -34,8 +34,7 @@ func SyncPeers() {
 
 		var scores []Score
 
-		err = json.NewDecoder(resp.Body).
-			Decode(&scores)
+		err = json.NewDecoder(resp.Body).Decode(&scores)
 
 		resp.Body.Close()
 
@@ -51,6 +50,16 @@ func SyncPeers() {
 		}
 
 		for _, score := range scores {
+
+			if score.LastSeen.IsZero() {
+
+				log.Printf(
+					"Ignoring remote node with empty last_seen: %s",
+					score.NodeID,
+				)
+
+				continue
+			}
 
 			RegisterScore(score)
 

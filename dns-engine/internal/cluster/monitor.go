@@ -1,20 +1,33 @@
+package cluster
+
+import (
+	"log"
+	"time"
+)
+
 func StartMonitor() {
 
- ticker := time.NewTicker(...)
+	ticker := time.NewTicker(
+		15 * time.Second,
+	)
 
- for range ticker.C {
+	defer ticker.Stop()
 
-     UpdateHeartbeat()
+	for range ticker.C {
 
-     SyncPeer()
+		UpdateHeartbeat()
 
-     hb := GetHeartbeat()
+		SyncPeers()
 
-     log.Printf(
-        "Heartbeat sent: %s %s %s",
-        hb.NodeID,
-        hb.Region,
-        hb.Status,
-     )
- }
+		RemoveStaleNodes()
+
+		hb := GetHeartbeat()
+
+		log.Printf(
+			"Heartbeat sent: %s %s %s",
+			hb.NodeID,
+			hb.Region,
+			hb.Status,
+		)
+	}
 }

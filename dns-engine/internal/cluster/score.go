@@ -8,6 +8,8 @@ type Score struct {
 
 	Status string `json:"status"`
 
+	LastSeen time.Time `json:"last_seen"`
+
 	Heartbeat int `json:"heartbeat"`
 	DNS       int `json:"dns"`
 	Latency   int `json:"latency"`
@@ -32,6 +34,8 @@ func CalculateScore() Score {
 		NodeID: hb.NodeID,
 		Region: hb.Region,
 		Status: hb.Status,
+
+		LastSeen: hb.LastSeen,
 
 		Heartbeat: heartbeatScore,
 		DNS:       dnsScore,

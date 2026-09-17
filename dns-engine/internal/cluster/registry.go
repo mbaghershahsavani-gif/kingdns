@@ -21,8 +21,12 @@ func RegisterScore(score Score) {
 		return
 	}
 
-	log.Printf("Registered trusted node: %s", score.NodeID)
-
+	log.Printf(
+		"Registered trusted node: %s region=%s last_seen=%s",
+		score.NodeID,
+		score.Region,
+		score.LastSeen,
+	)
 	nodesMutex.Lock()
 	defer nodesMutex.Unlock()
 

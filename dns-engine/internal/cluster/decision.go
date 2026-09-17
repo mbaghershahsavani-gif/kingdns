@@ -1,11 +1,22 @@
 package cluster
 
+import (
+	"time"
+)
+
 type Decision struct {
 	ActiveNode   string `json:"active_node"`
 	ActiveRegion string `json:"active_region"`
 	State        string `json:"state"`
 	Score        int    `json:"score"`
 	Reason       string `json:"reason"`
+}
+
+const nodeTimeout = 90 * time.Second
+
+func IsNodeAlive(node Score) bool {
+
+	return time.Since(node.LastSeen) < nodeTimeout
 }
 
 func CalculateDecision() Decision {
@@ -24,6 +35,10 @@ func CalculateDecision() Decision {
 
 	for _, node := range nodes {
 
+		if !IsNodeAlive(node) {
+			continue
+		}
+
 		state := EvaluateHealth(node)
 
 		if node.Region == preferred &&
@@ -39,9 +54,13 @@ func CalculateDecision() Decision {
 		}
 	}
 
-	// Fallback to highest healthy node
+	// Fallback to highest healthy live node
 
 	for _, node := range nodes {
+
+		if !IsNodeAlive(node) {
+			continue
+		}
 
 		state := EvaluateHealth(node)
 
